@@ -14,6 +14,9 @@ async function createTable() {
       );
     `;
 
+    await pool.query("DROP TABLE IF EXISTS misiones");
+    console.log("🗑️ Tabla 'misiones' eliminada si existía.");
+
     await pool.query(sql);
     console.log("✅ Tabla 'misiones' creada correctamente.");
 
